@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+//Write a short adventure game.
+
+// In the style of Colossal Cave Adventure, write a three-room adventure game. The user should start in one room: “You are in a room. There is an exit to the north and to the west”. Try using the prompt text for output (prompt ("you are in a room..."))
+
+// The user will type an instruction into the prompt (e.g. “go north”). Figure out what the user wants to do (“go north” or “go west”) and follow that instruction.
+
+// Put a dragon in the north room and a shield in the west room. They must get the shield (“get shield” in the west room) to get past the dragon. The west room has an exit to the east (the starting room) and the north room has an exit to the north and south (the win condition and the starting room).
+
+// When they get past the dragon (“go north” in the north room while holding the shield), they win the game.
+
+// If you are feeling adventurous, try adding even more rooms, items, and challenges to this game!
+var west = "WEST";
+var north = "NORTH";
+var east = "EAST";
+var south = "SOUTH";
+var shield = "SHIELD";
+var initGame = prompt("You are in a room. There is an exit to the north and to the west. You need to get the shield in the west room in order to get past the dragon in the north room. If you want to go north, type NORTH. If you want to go west, type WEST.");
+	if (initGame === west) {
+		var goWest = prompt("You have entered the west room. You see the shield you need to defeat the dragon. To pick up the shield type SHIELD. ")
+		if (goWest === shield) {
+			var armed = prompt("You have the shield! To leave the room enter EAST.");
+			if (armed === east) {
+				prompt(initGame);
+			}
+		}else {
+			prompt(nope);
+		}
+	}else if (initGame === north) {
+		var goNorth = prompt("You have entered the north room. There is a dragon! If you have the shield and want to fight the dragon enter NORTH. If you don't, enter SOUTH.")
+	}else {
+		var nope = prompt("Sorry, you can't go that way.");
+	}
+
+	</script>
+
+
+</body>
+</html>
